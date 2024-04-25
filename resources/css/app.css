@@ -1,0 +1,14 @@
+/*Modules loading*/
+
+@import "layout.scss";
+@import "index.scss";
+@import "contacts.scss";
+* {
+    transition: all ease-in-out .1s;
+}
+/*Tailwind loading*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
