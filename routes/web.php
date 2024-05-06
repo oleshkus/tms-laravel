@@ -12,6 +12,8 @@ Route::get('/', function () {
 Route::prefix('news')->group(function () {
     Route::get('/', [NewsController::class, 'index'])->name('news.index');
     Route::get('/create', [NewsController::class, 'create'])->name('news.create');
+    Route::post('/create', [NewsController::class, 'store'])->name('news.store');
+
 
 //    Route::resource('/', NewsController::class);
 //    Route::resource('/create', NewsController::class);

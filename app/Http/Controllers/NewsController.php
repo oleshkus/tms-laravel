@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categories;
 use App\Models\News;
 use Illuminate\Http\Request;
 
@@ -22,9 +23,11 @@ class NewsController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Categories $categories)
     {
-        return view('news.create');
+        return view('news.create', [
+            'categories' => $categories
+        ]);
     }
 
     /**
@@ -32,11 +35,14 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
+
         $validated = $request->validated();
-        News::create([
+        $news = News::create([
             'title' => $validated['title'],
             'content' => $validated['content'],
+            'category',
             'author' => $validated['author'],
+
         ]);
     }
 
@@ -45,7 +51,7 @@ class NewsController extends Controller
      */
     public function show(News $news)
     {
-        $news = News::all();
+        $news = News::findOrFail();
 
     }
 
