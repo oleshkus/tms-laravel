@@ -14,17 +14,17 @@ class NewsController extends Controller
     public function index()
     {
         $news = News::all();
-
-        return view('news.index', [
-            'news' => $news
-        ]);
+//        dd($news);
+        return view('news.index', ['news' => $news]);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Categories $categories)
+    public function create()
     {
+        $categories = Categories::all();
+
         return view('news.create', [
             'categories' => $categories
         ]);
@@ -42,8 +42,9 @@ class NewsController extends Controller
             'content' => $validated['content'],
             'category',
             'author' => $validated['author'],
-
         ]);
+
+        return redirect()->route('news.index')->with('success', 'Новость успешно создана');
     }
 
     /**

@@ -7,9 +7,10 @@
         </div>
     </x-header>
     <div class="container flex flex-row flex-wrap justify-between items-start">
+{{--        {{dd($news)}}--}}
         @foreach($news as $new)
-            <x-news_card :title="$new->title" :created="$new->created_at" :content="$new->content" :author="$new->author" :category="$new->category">
-
+            <x-news_card :title="$new->title" :created="$new->created_at" :content="$new->content"
+                         :author="$new->author" :category="$new->category">
             </x-news_card>
         @endforeach
     </div>

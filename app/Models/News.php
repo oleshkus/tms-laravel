@@ -12,12 +12,8 @@ class News extends Model
     protected $fillable = [
         'title',
         'content',
+        'category',
         'author',
     ];
-
-    public function author()
-    {
-        return $this->hasOne(Authors::class, 'id', 'authors_id');
-    }
 
 }
