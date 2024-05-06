@@ -2,10 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\News;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\News>
+ * @extends Factory<News>
  */
 class NewsFactory extends Factory
 {
@@ -19,7 +20,7 @@ class NewsFactory extends Factory
         return [
             //
             'title' => fake()->text(10),
-            'content' => fake()->realText(),
+            'content' => fake()->realText(200),
             'category' => fake()->word(),
             'author' => fake()->name(),
         ];

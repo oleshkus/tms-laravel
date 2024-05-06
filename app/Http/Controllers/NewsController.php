@@ -24,7 +24,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        //
+        return view('news.create');
     }
 
     /**
@@ -32,7 +32,12 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validated();
+        News::create([
+            'title' => $validated['title'],
+            'content' => $validated['content'],
+            'author' => $validated['author'],
+        ]);
     }
 
     /**
@@ -40,7 +45,8 @@ class NewsController extends Controller
      */
     public function show(News $news)
     {
-        //
+        $news = News::all();
+
     }
 
     /**

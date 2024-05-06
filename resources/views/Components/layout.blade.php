@@ -10,7 +10,7 @@
     <title></title>
 </head>
 <body class="flex justify-center">
-    <div class="container mx-5 bg-opacity-100 h-screen ">
+    <div class="container mx-5 bg-opacity-100 h-full ">
         {{ $slot }}
     </div>
 </body>
