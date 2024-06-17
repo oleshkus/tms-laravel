@@ -5,14 +5,14 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet"/>
     @vite('resources/css/app.css')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     <title></title>
 </head>
 <body class="flex justify-center">
-    <div class="container mx-5 bg-opacity-100 h-full ">
-        {{ $slot }}
-    </div>
+<div class="container mx-5 bg-opacity-100 min-h-[100%]">
+    {{ $slot }}
+</div>
 </body>
 </html>
